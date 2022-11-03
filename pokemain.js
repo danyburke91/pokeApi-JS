@@ -21,11 +21,11 @@ let getPokemon = async (pokemon)=> {
 let loadPokemon = async (pokemon) => {
     let data = await getPokemon(pokemon);
     console.log(data);
-    let new_rows = `<tr><td scope='row' style="text-align: center;" >${(data.forms[0].name).toUpperCase()}</td></tr><tr><td scope='row'><img src=${data.sprites.other["official-artwork"].front_default}
+    let new_rows = `<div><h1 style="text-align: center;">${(data.forms[0].name).toUpperCase()}</td></tr><tr><td scope='row'><img src=${data.sprites.other["official-artwork"].front_default}
     style="width: 18rem; margin: auto; display: block;"></td></tr>`;
-    document.getElementById('pokemonBody').insertAdjacentHTML('afterend', new_rows);
+    document.getElementById('pokemonBody').insertAdjacentHTML('afterbegin', new_rows);
 }
 
-let clearPokemon = () => {
-    document.getElementById('pokemonBody'),innerHTML='';
+let clearPokemonData = () => {
+    document.getElementById('pokemonBody').innerHTML='';
 }
